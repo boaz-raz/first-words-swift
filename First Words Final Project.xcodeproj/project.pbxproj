@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF414B2D1CDA885600FEBDD6 /* ViewPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */; };
 		AF63775B1CD8514500FD57D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63775A1CD8514500FD57D6 /* AppDelegate.swift */; };
-		AF63775D1CD8514500FD57D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63775C1CD8514500FD57D6 /* ViewController.swift */; };
+		AF63775D1CD8514500FD57D6 /* ViewController.swift.old in Sources */ = {isa = PBXBuildFile; fileRef = AF63775C1CD8514500FD57D6 /* ViewController.swift.old */; };
 		AF6377601CD8514500FD57D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF63775E1CD8514500FD57D6 /* Main.storyboard */; };
 		AF6377631CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF6377611CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodeld */; };
 		AF6377651CD8514500FD57D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6377641CD8514500FD57D6 /* Assets.xcassets */; };
 		AF6377681CD8514500FD57D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF6377661CD8514500FD57D6 /* LaunchScreen.storyboard */; };
+		AF6377701CD863AD00FD57D6 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF63776F1CD863AD00FD57D6 /* Photos.framework */; };
+		AF6377721CD8646000FD57D6 /* PhotoGallaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6377711CD8646000FD57D6 /* PhotoGallaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotoController.swift; sourceTree = "<group>"; };
 		AF6377571CD8514500FD57D6 /* First Words Final Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "First Words Final Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF63775A1CD8514500FD57D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF63775C1CD8514500FD57D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF63775C1CD8514500FD57D6 /* ViewController.swift.old */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewController.swift.old; sourceTree = "<group>"; };
 		AF63775F1CD8514500FD57D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF6377621CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = First_Words_Final_Project.xcdatamodel; sourceTree = "<group>"; };
 		AF6377641CD8514500FD57D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF6377671CD8514500FD57D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF6377691CD8514500FD57D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF63776F1CD863AD00FD57D6 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		AF6377711CD8646000FD57D6 /* PhotoGallaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGallaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6377701CD863AD00FD57D6 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 		AF63774E1CD8514500FD57D6 = {
 			isa = PBXGroup;
 			children = (
+				AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */,
+				AF63776F1CD863AD00FD57D6 /* Photos.framework */,
 				AF6377591CD8514500FD57D6 /* First Words Final Project */,
 				AF6377581CD8514500FD57D6 /* Products */,
 			);
@@ -57,8 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				AF63775A1CD8514500FD57D6 /* AppDelegate.swift */,
-				AF63775C1CD8514500FD57D6 /* ViewController.swift */,
+				AF63775C1CD8514500FD57D6 /* ViewController.swift.old */,
 				AF63775E1CD8514500FD57D6 /* Main.storyboard */,
+				AF6377711CD8646000FD57D6 /* PhotoGallaryViewController.swift */,
 				AF6377641CD8514500FD57D6 /* Assets.xcassets */,
 				AF6377661CD8514500FD57D6 /* LaunchScreen.storyboard */,
 				AF6377691CD8514500FD57D6 /* Info.plist */,
@@ -139,9 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF63775D1CD8514500FD57D6 /* ViewController.swift in Sources */,
+				AF6377721CD8646000FD57D6 /* PhotoGallaryViewController.swift in Sources */,
+				AF63775D1CD8514500FD57D6 /* ViewController.swift.old in Sources */,
 				AF63775B1CD8514500FD57D6 /* AppDelegate.swift in Sources */,
 				AF6377631CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodeld in Sources */,
+				AF414B2D1CDA885600FEBDD6 /* ViewPhotoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +215,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -241,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -252,10 +264,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "First Words Final Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.boazraz.First-Words-Final-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -263,10 +280,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "First Words Final Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.boazraz.First-Words-Final-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -289,6 +311,7 @@
 				AF63776E1CD8514500FD57D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
