@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF414B2D1CDA885600FEBDD6 /* ViewPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */; };
 		AF63775B1CD8514500FD57D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63775A1CD8514500FD57D6 /* AppDelegate.swift */; };
-		AF63775D1CD8514500FD57D6 /* ViewController.swift.old in Sources */ = {isa = PBXBuildFile; fileRef = AF63775C1CD8514500FD57D6 /* ViewController.swift.old */; };
+		AF63775D1CD8514500FD57D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63775C1CD8514500FD57D6 /* ViewController.swift */; };
 		AF6377601CD8514500FD57D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF63775E1CD8514500FD57D6 /* Main.storyboard */; };
 		AF6377631CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF6377611CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodeld */; };
 		AF6377651CD8514500FD57D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6377641CD8514500FD57D6 /* Assets.xcassets */; };
@@ -19,10 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotoController.swift; sourceTree = "<group>"; };
+		AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewPhotoController.swift; path = ../ViewPhotoController.swift; sourceTree = "<group>"; };
 		AF6377571CD8514500FD57D6 /* First Words Final Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "First Words Final Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF63775A1CD8514500FD57D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF63775C1CD8514500FD57D6 /* ViewController.swift.old */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewController.swift.old; sourceTree = "<group>"; };
+		AF63775C1CD8514500FD57D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF63775F1CD8514500FD57D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF6377621CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = First_Words_Final_Project.xcdatamodel; sourceTree = "<group>"; };
 		AF6377641CD8514500FD57D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,7 +47,6 @@
 		AF63774E1CD8514500FD57D6 = {
 			isa = PBXGroup;
 			children = (
-				AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */,
 				AF63776F1CD863AD00FD57D6 /* Photos.framework */,
 				AF6377591CD8514500FD57D6 /* First Words Final Project */,
 				AF6377581CD8514500FD57D6 /* Products */,
@@ -65,8 +64,9 @@
 		AF6377591CD8514500FD57D6 /* First Words Final Project */ = {
 			isa = PBXGroup;
 			children = (
+				AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */,
 				AF63775A1CD8514500FD57D6 /* AppDelegate.swift */,
-				AF63775C1CD8514500FD57D6 /* ViewController.swift.old */,
+				AF63775C1CD8514500FD57D6 /* ViewController.swift */,
 				AF63775E1CD8514500FD57D6 /* Main.storyboard */,
 				AF6377711CD8646000FD57D6 /* PhotoGallaryViewController.swift */,
 				AF6377641CD8514500FD57D6 /* Assets.xcassets */,
@@ -150,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF6377721CD8646000FD57D6 /* PhotoGallaryViewController.swift in Sources */,
-				AF63775D1CD8514500FD57D6 /* ViewController.swift.old in Sources */,
+				AF63775D1CD8514500FD57D6 /* ViewController.swift in Sources */,
 				AF63775B1CD8514500FD57D6 /* AppDelegate.swift in Sources */,
 				AF6377631CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodeld in Sources */,
 				AF414B2D1CDA885600FEBDD6 /* ViewPhotoController.swift in Sources */,
