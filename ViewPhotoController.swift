@@ -20,15 +20,12 @@ class ViewPhotoController: UIViewController {
         print("Share")
     }
     
-    
-//    @IBAction func btnDelete(sender: AnyObject) {
-//        print("Delete")
-//    }
-    
 
     
-    //@IBOutlet weak var imageView: UIImageView!
+    @IBAction func btnDelete(sender: AnyObject) {
+    }
     
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

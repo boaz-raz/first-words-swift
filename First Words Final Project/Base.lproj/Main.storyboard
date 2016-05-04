@@ -108,6 +108,11 @@
                     <view key="view" contentMode="scaleToFill" id="Ma3-Qf-0uv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ivu-M2-1r9">
+                                <rect key="frame" x="56" y="237" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
@@ -117,6 +122,11 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem width="331" style="plain" systemItem="fixedSpace" id="aJS-gb-H7F"/>
+                        <barButtonItem systemItem="trash" id="Krh-eS-Idj">
+                            <connections>
+                                <action selector="btnDelete:" destination="3Gm-RN-3im" id="t7c-Qg-Iep"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Full Image" id="tZt-Gr-LKh">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IFx-Gt-W0W">
@@ -125,6 +135,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Ivu-M2-1r9" id="eea-4S-kvp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLj-0Q-I4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
