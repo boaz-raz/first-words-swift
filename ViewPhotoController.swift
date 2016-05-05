@@ -17,7 +17,7 @@ class ViewPhotoController: UIViewController {
     
     
     @IBAction func btnVancel(sender: AnyObject) {
-        self.navigationController?.popToRootViewControllerAnimated(true) //!!Added Optional Chaining
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
 
@@ -76,14 +76,14 @@ class ViewPhotoController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.hidesBarsOnTap = true    //!!Added Optional Chaining
+        self.navigationController?.hidesBarsOnTap = true
         
         self.displayPhoto()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
     

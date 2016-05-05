@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Welcome to custom words-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="First_Words_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="first100words-2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mfp-74-ffb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-Vi-UN4">
-                                <rect key="frame" x="179" y="350" width="34" height="30"/>
+                                <rect key="frame" x="104" y="456" width="113" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="b7M-nh-2FQ" kind="show" id="aZY-2d-dW1"/>
@@ -27,7 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="lR4-RM-vAH"/>
+                    <navigationItem key="navigationItem" title="Welcome to custom words" id="lR4-RM-vAH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,4 +179,7 @@
             <point key="canvasLocation" x="674" y="1199"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first100words-2.jpg" width="600" height="600"/>
+    </resources>
 </document>

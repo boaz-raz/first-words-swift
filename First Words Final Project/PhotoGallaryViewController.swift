@@ -54,8 +54,6 @@ class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, 
         
     }
     
-
-    //@IBOutlet var collectionView : UICollectionView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -153,10 +151,7 @@ class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, 
         
         //Modify the cell
         let asset: PHAsset = self.photosAsset[indexPath.item] as! PHAsset
-        
-        // Create options for retrieving image (Degrades quality if using .Fast)
-        //        let imageOptions = PHImageRequestOptions()
-        //        imageOptions.resizeMode = PHImageRequestOptionsResizeMode.Fast
+
         PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: self.assetThumbnailSize, contentMode: .AspectFill, options: nil, resultHandler: {(result, info)in
             if let image = result {
                 cell.setThumbnailImage(image)

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AF031D981CDAC09D00EE5D26 /* PhotoThumbCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF031D971CDAC09D00EE5D26 /* PhotoThumbCollectionViewCell.swift */; };
+		AF031D9A1CDB240100EE5D26 /* first100words-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF031D991CDB240100EE5D26 /* first100words-2.jpg */; };
+		AF031D9C1CDB254F00EE5D26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF031D9B1CDB254F00EE5D26 /* Images.xcassets */; };
 		AF414B2D1CDA885600FEBDD6 /* ViewPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */; };
 		AF63775B1CD8514500FD57D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63775A1CD8514500FD57D6 /* AppDelegate.swift */; };
 		AF63775D1CD8514500FD57D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63775C1CD8514500FD57D6 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		AF031D971CDAC09D00EE5D26 /* PhotoThumbCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF031D991CDB240100EE5D26 /* first100words-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "first100words-2.jpg"; sourceTree = "<group>"; };
+		AF031D9B1CDB254F00EE5D26 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF414B2C1CDA885600FEBDD6 /* ViewPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewPhotoController.swift; path = ../ViewPhotoController.swift; sourceTree = "<group>"; };
 		AF6377571CD8514500FD57D6 /* First Words Final Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "First Words Final Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF63775A1CD8514500FD57D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				AF6377691CD8514500FD57D6 /* Info.plist */,
 				AF6377611CD8514500FD57D6 /* First_Words_Final_Project.xcdatamodeld */,
 				AF031D971CDAC09D00EE5D26 /* PhotoThumbCollectionViewCell.swift */,
+				AF031D991CDB240100EE5D26 /* first100words-2.jpg */,
+				AF031D9B1CDB254F00EE5D26 /* Images.xcassets */,
 			);
 			path = "First Words Final Project";
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF6377681CD8514500FD57D6 /* LaunchScreen.storyboard in Resources */,
+				AF031D9C1CDB254F00EE5D26 /* Images.xcassets in Resources */,
+				AF031D9A1CDB240100EE5D26 /* first100words-2.jpg in Resources */,
 				AF6377651CD8514500FD57D6 /* Assets.xcassets in Resources */,
 				AF6377601CD8514500FD57D6 /* Main.storyboard in Resources */,
 			);
@@ -267,7 +275,8 @@
 		AF63776D1CD8514500FD57D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-New";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "First Words Final Project/Info.plist";
@@ -283,7 +292,8 @@
 		AF63776E1CD8514500FD57D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-New";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "First Words Final Project/Info.plist";
