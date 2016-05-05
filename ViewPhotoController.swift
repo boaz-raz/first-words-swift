@@ -11,44 +11,82 @@ import Photos
 
 class ViewPhotoController: UIViewController {
     
-    
-
     var assetCollection: PHAssetCollection!
-    
     var photosAsset: PHFetchResult!
-    
-    var index: Int = 0;
-    
+    var index: Int = 0
     
     
-    @IBAction func btnCancel(sender: AnyObject) {
-        print("Cancel")
+    @IBAction func btnVancel(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true) //!!Added Optional Chaining
     }
     
+
     @IBAction func btnShare(sender: AnyObject) {
         print("Share")
     }
-    
-
-    
     @IBAction func btnDelete(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Delete Image", message: "Are you sure you want to delete this image?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default,
+            handler: {(alertAction)in
+                PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+                    //Delete Photo
+                    if let request = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection){
+                        request.removeAssets([self.photosAsset[self.index]])
+                    }
+                    },
+                    completionHandler: {(success, error)in
+                        NSLog("\nDeleted Image -> %@", (success ? "Success":"Error!"))
+                        alert.dismissViewControllerAnimated(true, completion: nil)
+                        if(success){
+                            // Move to the main thread to execute
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.photosAsset = PHAsset.fetchAssetsInAssetCollection(self.assetCollection, options: nil)
+                                if(self.photosAsset.count == 0){
+                                    print("No Images Left!!")
+                                    self.navigationController?.popToRootViewControllerAnimated(true)
+                                }else{
+                                    if(self.index >= self.photosAsset.count){
+                                        self.index = self.photosAsset.count - 1
+                                    }
+                                    self.displayPhoto()
+                                }
+                            })
+                        }else{
+                            print("Error: \(error)")
+                        }
+                })
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: {(alertAction)in
+            //Do not delete photo
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
-    
-    //imageView
-    
+   
+   
     @IBOutlet weak var imgView: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
-
-        self.navigationController?.hidesBarsOnTap = true
-        self.displayPhoto()
+        self.navigationController?.hidesBarsOnTap = true    //!!Added Optional Chaining
         
+        self.displayPhoto()
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     
     func displayPhoto(){
         // Set targetSize of image to iPhone screen size
@@ -62,5 +100,9 @@ class ViewPhotoController: UIViewController {
                 self.imgView.image = result
             })
         }
+        print("This is a test")
     }
+    
+    
+    
 }

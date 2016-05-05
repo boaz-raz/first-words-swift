@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-Vi-UN4">
-                                <rect key="frame" x="136" y="269" width="34" height="30"/>
+                                <rect key="frame" x="179" y="350" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="b7M-nh-2FQ" kind="show" id="aZY-2d-dW1"/>
@@ -72,7 +72,7 @@
                                         <size key="customSize" width="105" height="105"/>
                                         <connections>
                                             <outlet property="imgView" destination="22i-CW-f9G" id="OW2-Mp-2Ta"/>
-                                            <segue destination="3Gm-RN-3im" kind="show" identifier="ViewLargePhoto" id="sfK-nC-PFD"/>
+                                            <segue destination="3Gm-RN-3im" kind="show" identifier="viewLargePhoto" id="sfK-nC-PFD"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -127,25 +127,25 @@
                     <toolbarItems>
                         <barButtonItem systemItem="action" id="1gU-Ke-8Mt">
                             <connections>
-                                <action selector="btnShare:" destination="3Gm-RN-3im" id="Ven-0y-WhN"/>
+                                <action selector="btnShare:" destination="3Gm-RN-3im" id="WRT-hN-jrE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem width="246" style="plain" systemItem="fixedSpace" id="aJS-gb-H7F"/>
                         <barButtonItem systemItem="trash" id="Krh-eS-Idj">
                             <connections>
-                                <action selector="btnDelete:" destination="3Gm-RN-3im" id="t7c-Qg-Iep"/>
+                                <action selector="btnDelete:" destination="3Gm-RN-3im" id="dCi-lw-4nE"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Full Image" id="tZt-Gr-LKh">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IFx-Gt-W0W">
                             <connections>
-                                <action selector="btnCancel:" destination="3Gm-RN-3im" id="NaU-I8-pL2"/>
+                                <action selector="btnVancel:" destination="3Gm-RN-3im" id="rhW-yW-uwo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imgView" destination="Mdn-u0-aZF" id="v9H-9Q-PEN"/>
+                        <outlet property="imgView" destination="Mdn-u0-aZF" id="IhI-L6-SK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLj-0Q-I4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
