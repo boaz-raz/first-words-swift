@@ -14,7 +14,7 @@ let reuseID = "PhotoCell"
 // App specific album
 let albumName = "My First Words"
 
-class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var albumFound: Bool = false
     // The folder for the app
@@ -23,15 +23,41 @@ class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, 
     // All the photos in the array
     var photoAsset: PHFetchResult!
     
+    
+    
     @IBAction func btnCamera(sender: AnyObject) {
         print("Camera")
+        // check if the camera is avilable
+        if(UIImagePickerController.isSourceTypeAvailable(.Camera)){
+            // laod camera
+            
+            let picker : UIImagePickerController = UIImagePickerController()
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.delegate = self
+            picker.allowsEditing = false
+            self.presentViewController(picker, animated: true, completion: nil)
+            
+        } else {
+            //no camera available
+            let alert = UIAlertController(title: "Error", message: "There is no camera available", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: {(alertAction)in
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+        }
     }
-    
     
     @IBAction func btnAlbum(sender: AnyObject) {
-        print("Album")
+        print("btnAlbum was clicked")
+        
+        let picker : UIImagePickerController = UIImagePickerController()
+        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        picker.delegate = self
+        picker.allowsEditing = false
+        self.presentViewController(picker, animated: true, completion: nil)
     }
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -98,8 +124,7 @@ class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, 
         }
     }
     
-    @available(iOS 6.0, *)
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
         
         var count: Int = 0
         
@@ -108,10 +133,11 @@ class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, 
         }
         // tells us the numbers of cells we need
         return count;
+        
+       
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-    @available(iOS 6.0, *)
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: PhotoThumbCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseID, forIndexPath: indexPath) as! PhotoThumbCollectionViewCell
         
@@ -139,6 +165,38 @@ class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, 
     }
 
     
+    
+    // Handeling the image
+    
+    //TODO
+    //UIImagePickerControllerDelegate Methods
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        if let image: UIImage = info["UIImagePickerControllerOriginalImage"] as? UIImage{
+            
+            //Implement if allowing user to edit the selected image
+          
+            
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), {
+                PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+                    let createAssetRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+                    let assetPlaceholder = createAssetRequest.placeholderForCreatedAsset
+                    if let albumChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection, assets: self.photoAsset) {
+                        albumChangeRequest.addAssets([assetPlaceholder!])
+                    }
+                    }, completionHandler: {(success, error)in
+                        dispatch_async(dispatch_get_main_queue(), {
+                            NSLog("Adding Image to Library -> %@", (success ? "Sucess":"Error!"))
+                            picker.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                })
+                
+            })
+        }
+    }
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
 } // END CLASS
