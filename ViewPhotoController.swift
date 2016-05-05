@@ -14,8 +14,8 @@ class ViewPhotoController: UIViewController {
     
 
     var assetCollection: PHAssetCollection!
-
-    var photoAsset: PHFetchResult!
+    
+    var photosAsset: PHFetchResult!
     
     var index: Int = 0;
     
@@ -34,7 +34,9 @@ class ViewPhotoController: UIViewController {
     @IBAction func btnDelete(sender: AnyObject) {
     }
     
-    @IBOutlet weak var imageView: UIImageView!
+    //imageView
+    
+    @IBOutlet weak var imgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +51,16 @@ class ViewPhotoController: UIViewController {
     }
     
     func displayPhoto(){
+        // Set targetSize of image to iPhone screen size
+        let screenSize: CGSize = UIScreen.mainScreen().bounds.size
+        let targetSize = CGSizeMake(screenSize.width, screenSize.height)
+        
         let imageManager = PHImageManager.defaultManager()
-        var ID = imageManager.requestImageForAsset(self.photoAsset[self.index] as! PHAsset, targetSize: PHImageManagerMaximumSize, contentMode: .AspectFit, options: nil) { (result:UIImage?, info:[NSObject : AnyObject]?) -> Void in
-            self.imageView.image = result
-            
+        if let asset = self.photosAsset[self.index] as? PHAsset{
+            imageManager.requestImageForAsset(asset, targetSize: targetSize, contentMode: .AspectFit, options: nil, resultHandler: {
+                (result, info)->Void in
+                self.imgView.image = result
+            })
         }
     }
 }
