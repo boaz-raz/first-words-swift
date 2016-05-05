@@ -73,29 +73,71 @@ class PhotoGallaryViewController: UIViewController, UICollectionViewDataSource, 
         self.navigationController?.hidesBarsOnTap = false
         
         // get the phots from the collection // this is only contians the url of the images
-        self.photoAsset = PHAsset.fetchAssetsInAssetCollection(self.assetCollection, options: nil)
+        self.photoAsset? = PHAsset.fetchAssetsInAssetCollection(self.assetCollection, options: nil)
         
         
         // Handle no photos in the assetsCollecitn
         
         
-        self.collectionView.reloadData()
+        self.collectionView?.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier! as String == "viewLargePhoto") {
+            let controller:ViewPhotoController = segue.destinationViewController as! ViewPhotoController
+            
+            // get the index of the photo
+            let indexPhath: NSIndexPath = self.collectionView.indexPathForCell(sender as! UICollectionViewCell)!
+        
+            controller.index = indexPhath.item
+            
+            // pass info to ViewPhoroConreoller
+            controller.photoAsset = self.photoAsset
+            controller.assetCollection = self.assetCollection
+            
+        }
+    }
+    
     @available(iOS 6.0, *)
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        var count: Int = 0
+        
+        if(self.photoAsset != nil){
+            count = self.photoAsset.count
+        }
         // tells us the numbers of cells we need
-        return self.photoAsset.count;
+        return count;
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     @available(iOS 6.0, *)
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseID, forIndexPath: indexPath) as UICollectionViewCell
+        let cell: PhotoThumbCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseID, forIndexPath: indexPath) as! PhotoThumbCollectionViewCell
+        
+        //
+        let asset: PHAsset = self.photoAsset[indexPath.item] as! PHAsset
+        PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: .AspectFill, options: nil)  {(result:UIImage?, info:[NSObject : AnyObject]?) -> Void in
+            cell.setThumbnailImage(result!)
+        
+        }
         
         return cell
         
     }
+    
+    // UICollectionViewDelegateFlowLayout methods
+    
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 4
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 1
+    }
+
     
     
     

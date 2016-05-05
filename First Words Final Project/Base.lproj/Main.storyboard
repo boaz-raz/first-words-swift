@@ -71,7 +71,8 @@
                                         <color key="backgroundColor" red="1" green="0.27885026099999999" blue="0.1456014179" alpha="1" colorSpace="calibratedRGB"/>
                                         <size key="customSize" width="96" height="84"/>
                                         <connections>
-                                            <segue destination="3Gm-RN-3im" kind="show" id="sfK-nC-PFD"/>
+                                            <outlet property="imgView" destination="22i-CW-f9G" id="OW2-Mp-2Ta"/>
+                                            <segue destination="3Gm-RN-3im" kind="show" identifier="ViewLargePhoto" id="sfK-nC-PFD"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

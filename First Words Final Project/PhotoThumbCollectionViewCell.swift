@@ -9,5 +9,14 @@
 import UIKit
 
 class PhotoThumbCollectionViewCell: UICollectionViewCell {
+  
+    
+    @IBOutlet weak var imgView: UIImageView!
+    
+    
+    // get the image
+    func setThumbnailImage(thumbnailImage: UIImage) {
+        self.imgView.image = thumbnailImage
+    }
     
 }

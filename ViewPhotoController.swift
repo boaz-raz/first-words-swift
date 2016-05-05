@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import Photos
 
 class ViewPhotoController: UIViewController {
+    
+    
+
+    var assetCollection: PHAssetCollection!
+
+    var photoAsset: PHFetchResult!
+    
+    var index: Int = 0;
     
     
     
@@ -29,5 +38,21 @@ class ViewPhotoController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+
+        self.navigationController?.hidesBarsOnTap = true
+        self.displayPhoto()
+        
+    }
+    
+    func displayPhoto(){
+        let imageManager = PHImageManager.defaultManager()
+        var ID = imageManager.requestImageForAsset(self.photoAsset[self.index] as! PHAsset, targetSize: PHImageManagerMaximumSize, contentMode: .AspectFit, options: nil) { (result:UIImage?, info:[NSObject : AnyObject]?) -> Void in
+            self.imageView.image = result
+            
+        }
     }
 }
